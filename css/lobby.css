@@ -1024,6 +1024,7 @@ img, svg { display: block; }
 @media (max-width: 720px) {
   .header { gap: 10px; height: 62px; }
   .header-login, .search, .logo-text small { display: none; }
+  .avatar-btn { display: none; }
   .logo-text { font-size: 15px; }
   .logo-mark { width: 30px; height: 30px; }
   .balance-chip { height: 36px; padding: 0 9px; }
@@ -1065,9 +1066,10 @@ img, svg { display: block; }
   .toast { font-size: 10.5px; }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .logo-text { font-size: 13px; }
   .balance-chip em { display: none; }
+  .header { gap: 7px; padding: 0 9px; }
   .btn.gold { padding: 0 9px; }
   .hero-dots { display: none; }
 }

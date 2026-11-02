@@ -815,6 +815,13 @@ kbd {
   .modal-card { padding: 18px; }
 }
 
+@media (max-width: 460px) {
+  .brand-text { display: none; }
+  .top-actions { gap: 6px; }
+  .balance-chip em { display: none; }
+  .balance-chip { padding: 6px 9px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
 }
