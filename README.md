@@ -2,6 +2,9 @@
 
 A fully client-side casino lobby and **Aviator-style crash game** built with plain HTML, CSS and JavaScript. No build step, no dependencies, no backend — just open it in a browser.
 
+**Live demo:** https://flakervip143.github.io/aviator/
+**Repository:** https://github.com/Flakervip143/aviator
+
 > **Demo only.** All balances are virtual coins with no monetary value. There are no deposits, withdrawals or real-money gambling features. This is an original interface, not affiliated with Crorebet, Spribe or any other operator.
 
 ## Live features
