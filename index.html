@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1829">
+<meta name="description" content="SkyRocket Casino — play Aviator, crash games, slots, live casino and table games with free demo coins. No real money.">
+<title>SkyRocket Casino — Aviator &amp; Crash Games (Demo)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1829'/%3E%3Cpath d='M23 9 9 15l6 2 2 6z' fill='%23facc15'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/lobby.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="header-left">
+      <button class="burger" id="btnDrawer" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a class="logo" href="index.html">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M26 6 8 13.5l7.5 2.8L18.7 24z" fill="url(#lg1)"/>
+          <path d="M26 6 15.5 16.3" stroke="#fff7c2" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="26" cy="6" r="2" fill="#facc15"/>
+          <defs>
+            <linearGradient id="lg1" x1="8" y1="13" x2="24" y2="22" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38bdf8"/><stop offset="1" stop-color="#0581ff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-text">SKY<em>ROCKET</em><small>CASINO</small></span>
+      </a>
+    </div>
+
+    <nav class="main-nav">
+      <a class="active" href="index.html">Casino</a>
+      <a href="aviator.html">Crash Games</a>
+      <a href="#live">Live Dealers</a>
+      <a href="#bonus" data-open="modalBonus">Bonuses</a>
+    </nav>
+
+    <div class="header-right">
+      <label class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input id="searchInput" type="search" placeholder="Search games" autocomplete="off" aria-label="Search games">
+      </label>
+      <div class="balance-chip" title="Demo balance">
+        <span>Balance</span>
+        <strong id="balance">10,000</strong>
+        <em>coins</em>
+      </div>
+      <button class="btn ghost header-login" data-open="modalAuth">Log in</button>
+      <button class="btn gold" data-open="modalBonus">Top up</button>
+      <button class="avatar-btn" data-open="modalAuth" aria-label="Demo account">S</button>
+    </div>
+  </header>
+
+  <div class="page-body">
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="side-nav" aria-label="Game categories">
+        <button class="side-item active" data-filter="all">
+          <span class="side-icon">▦</span><span class="side-label">All games</span>
+        </button>
+        <button class="side-item" data-filter="favourites">
+          <span class="side-icon">★</span><span class="side-label">Favourites</span>
+        </button>
+        <div class="side-divider"></div>
+        <button class="side-item" data-filter="crash">
+          <span class="side-icon">🚀</span><span class="side-label">Crash</span>
+        </button>
+        <button class="side-item" data-filter="slots">
+          <span class="side-icon">🎰</span><span class="side-label">Slots</span>
+        </button>
+        <button class="side-item" data-filter="live">
+          <span class="side-icon">🃏</span><span class="side-label">Live casino</span>
+        </button>
+        <button class="side-item" data-filter="table">
+          <span class="side-icon">🎲</span><span class="side-label">Table games</span>
+        </button>
+        <button class="side-item" data-filter="indian">
+          <span class="side-icon">♠</span><span class="side-label">Indian games</span>
+        </button>
+      </nav>
+      <div class="side-note"><b>18+</b> Demo only<br>Virtual coins</div>
+    </aside>
+    <div class="drawer-scrim" id="drawerScrim"></div>
+
+    <!-- ================= CONTENT ================= -->
+    <main class="content">
+
+      <!-- HERO -->
+      <section class="hero" id="hero" aria-label="Featured games">
+        <div class="hero-track" id="heroTrack">
+          <article class="hero-slide slide-aviator">
+            <div class="hero-copy">
+              <span class="hero-eyebrow">Featured crash game</span>
+              <h1>Fly high. <em>Cash out</em><br>before it's gone.</h1>
+              <p>Provably fair multipliers, instant rounds and auto cash out.</p>
+              <div class="hero-actions">
+                <a class="btn big gold" href="aviator.html">▶ Play Aviator</a>
+                <button class="btn big ghost" data-open="modalHow">How it works</button>
+              </div>
+              <div class="hero-stats">
+                <span><b>1.00x → 1000x</b> multipliers</span>
+                <span><b>SHA-256</b> fairness</span>
+              </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="hero-orbit"></div>
+              <div class="hero-plane">✈</div>
+              <div class="hero-trail"></div>
+              <div class="hero-glow"></div>
+            </div>
+          </article>
+
+          <article class="hero-slide slide-bonus">
+            <div class="hero-copy">
+              <span class="hero-eyebrow">Welcome bonus</span>
+              <h1>Grab <em>1,000 free</em><br>demo coins.</h1>
+              <p>Top up instantly and try every game on the floor — no deposit, no KYC.</p>
+              <div class="hero-actions">
+                <button class="btn big gold" data-open="modalBonus">Claim coins</button>
+                <a class="btn big ghost" href="aviator.html">Play Aviator</a>
+              </div>
+              <div class="hero-stats">
+                <span><b>10,000</b> starter coins</span>
+                <span><b>No real money</b> ever</span>
+              </div>
+            </div>
+            <div class="hero-art art-coins" aria-hidden="true">
+              <span class="coin c1">🪙</span>
+              <span class="coin c2">🪙</span>
+              <span class="coin c3">🪙</span>
+              <span class="coin c4">💰</span>
+            </div>
+          </article>
+
+          <article class="hero-slide slide-crash">
+            <div class="hero-copy">
+              <span class="hero-eyebrow">Provably fair</span>
+              <h1>Every round,<br><em>verifiable</em>.</h1>
+              <p>Server seed hash before the round, full seed after. Check the maths yourself.</p>
+              <div class="hero-actions">
+                <a class="btn big gold" href="aviator.html">Try a round</a>
+                <a class="btn big ghost" href="aviator.html#fair">Verify seeds</a>
+              </div>
+              <div class="hero-stats">
+                <span><b>HMAC-SHA256</b> crash points</span>
+                <span><b>1%</b> house edge</span>
+              </div>
+            </div>
+            <div class="hero-art art-shield" aria-hidden="true">
+              <div class="shield-ring"></div>
+              <div class="shield-core">✓</div>
+            </div>
+          </article>
+        </div>
+
+        <button class="hero-arrow prev" id="heroPrev" aria-label="Previous slide">‹</button>
+        <button class="hero-arrow next" id="heroNext" aria-label="Next slide">›</button>
+        <div class="hero-dots" id="heroDots"></div>
+      </section>
+
+      <!-- PROMO STRIP -->
+      <section class="promo-strip" aria-label="Highlights">
+        <div><span>⚡</span> Instant demo rounds</div>
+        <div><span>🛡</span> Provably fair results</div>
+        <div><span>🪙</span> Free virtual coins</div>
+        <div><span>📱</span> Built for mobile</div>
+      </section>
+
+      <!-- CHIPS -->
+      <div class="chips" id="chips">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="crash">Crash</button>
+        <button class="chip" data-filter="slots">Slots</button>
+        <button class="chip" data-filter="live">Live casino</button>
+        <button class="chip" data-filter="table">Table</button>
+        <button class="chip" data-filter="indian">Indian</button>
+        <button class="chip" data-filter="favourites">★ Favourites</button>
+      </div>
+
+      <!-- GAME SECTIONS (rendered by JS) -->
+      <div id="sections"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span>🔍</span>
+        <h3>No games found</h3>
+        <p>Try a different search or category.</p>
+      </div>
+
+      <!-- INFO CARDS -->
+      <section class="info-cards">
+        <article class="info-card">
+          <span class="info-icon">🛡</span>
+          <h3>Provably fair</h3>
+          <p>Each crash point comes from HMAC-SHA256. The server seed hash is shown before every round and the seed is revealed after.</p>
+          <a href="aviator.html">See how it works ›</a>
+        </article>
+        <article class="info-card">
+          <span class="info-icon">🪙</span>
+          <h3>Virtual coins</h3>
+          <p>Start with 10,000 coins. Top up any time. There are no deposits, withdrawals or real-money payouts — ever.</p>
+          <button data-open="modalBonus">Top up balance ›</button>
+        </article>
+        <article class="info-card">
+          <span class="info-icon">🎮</span>
+          <h3>Play in seconds</h3>
+          <p>No sign-up or KYC. Your balance and stats are saved in this browser, so you can pick up where you left off.</p>
+          <a href="aviator.html">Play Aviator ›</a>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-top">
+          <a class="logo small" href="index.html">
+            <span class="logo-text">SKY<em>ROCKET</em><small>CASINO</small></span>
+          </a>
+          <div class="footer-links">
+            <a href="aviator.html">Aviator</a>
+            <a href="index.html#crash">Crash games</a>
+            <a href="index.html#live">Live casino</a>
+            <button data-open="modalHow">How to play</button>
+            <button data-open="modalAuth">Account</button>
+          </div>
+          <span class="badge-18">18+</span>
+        </div>
+        <p class="footer-legal">
+          SkyRocket is a <b>demo casino</b> built for entertainment. All balances are virtual coins with no monetary value.
+          No deposits, withdrawals or real-money gambling are offered. Play responsibly.
+          This project is an original interface and is not affiliated with Crorebet or any other operator.
+        </p>
+        <p class="footer-copy">© 2026 SkyRocket · Demo build</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ================= MOBILE BOTTOM NAV ================= -->
+  <nav class="bottom-nav">
+    <a class="active" href="index.html"><span>▦</span>Casino</a>
+    <a href="aviator.html"><span>🚀</span>Crash</a>
+    <button data-open="modalBonus"><span>🪙</span>Top up</button>
+    <button data-open="modalHow"><span>?</span>Help</button>
+    <button data-open="modalAuth"><span>👤</span>Account</button>
+  </nav>
+</div>
+
+<!-- ================= MODALS ================= -->
+<div class="modal" id="modalBonus" hidden>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+    <div class="modal-icon">🪙</div>
+    <h2>Demo top-up</h2>
+    <p>Add <b>1,000 virtual coins</b> to your demo balance. Coins are free and have no real-world value.</p>
+    <div class="bonus-balance">Current balance <strong id="bonusBalance">10,000</strong> coins</div>
+    <button class="btn gold full" id="btnClaim">+ Claim 1,000 coins</button>
+    <p class="fine" id="claimNote">You can top up as often as you like. No purchase necessary.</p>
+  </div>
+</div>
+
+<div class="modal" id="modalAuth" hidden>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+    <div class="modal-icon">👤</div>
+    <h2>Demo mode</h2>
+    <p>SkyRocket runs entirely in your browser. There are no accounts, logins, deposits or withdrawals.</p>
+    <p>Your balance, bet history and statistics are stored locally on this device.</p>
+    <button class="btn gold full" data-close>Continue as guest</button>
+    <p class="fine">Want a clean slate? Reset your demo balance from the Aviator page → menu → Statistics.</p>
+  </div>
+</div>
+
+<div class="modal" id="modalHow" hidden>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+    <h2>How the demo works</h2>
+    <ol class="steps">
+      <li><b>Start with 10,000 coins</b> — top up any time, free.</li>
+      <li><b>Open Aviator</b> and place a bet during the countdown.</li>
+      <li><b>Cash out</b> before the rocket flies away to keep your winnings.</li>
+      <li><b>Verify fairness</b> in the provably fair panel on the game page.</li>
+    </ol>
+    <p class="fine">All other game tiles are visual placeholders — only Aviator is playable in this build. Everything uses virtual coins.</p>
+    <a class="btn gold full" href="aviator.html">Open Aviator</a>
+  </div>
+</div>
+
+<div class="modal" id="modalSoon" hidden>
+  <div class="modal-card small">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+    <div class="modal-icon">🛠</div>
+    <h2 id="soonTitle">Coming soon</h2>
+    <p id="soonText">This table is a layout placeholder in the demo build.</p>
+    <a class="btn gold full" href="aviator.html">Play Aviator instead</a>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="js/lobby.js"></script>
+</body>
+</html>

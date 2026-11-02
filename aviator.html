@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1829">
+<meta name="description" content="SkyRocket — a provably fair aviator-style crash game with virtual coins. Cash out before the rocket flies away.">
+<title>Aviator — SkyRocket Casino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070b1a'/%3E%3Cpath d='M23 9 9 15l6 2 2 6z' fill='%2322d3ee'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M26 6 8 13.5l7.5 2.8L18.7 24z" fill="url(#g1)"/>
+        <path d="M26 6 15.5 16.3" stroke="#a5f3fc" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="26" cy="6" r="2" fill="#fbbf24"/>
+        <defs>
+          <linearGradient id="g1" x1="8" y1="13" x2="24" y2="22" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name">SKY<em>ROCKET</em></span>
+        <span class="brand-tag">aviator · provably fair</span>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <a class="icon-btn" href="index.html" title="Casino lobby" aria-label="Casino lobby">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7M5.5 9.5V20.5h13V9.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="balance-chip" title="Demo balance">
+        <span class="balance-label">Balance</span>
+        <strong id="balance">10,000</strong>
+        <em>coins</em>
+      </div>
+      <button class="icon-btn" id="btnSound" title="Toggle sound" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path id="soundWave" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" id="btnMenu" title="Menu" aria-label="Menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- ================= GAME STAGE ================= -->
+    <section class="stage" id="stage" aria-label="Game board">
+      <div class="history" id="history" aria-label="Previous rounds"></div>
+
+      <canvas id="game"></canvas>
+
+      <div class="stage-center" id="stageCenter">
+        <div class="phase-label" id="phaseLabel">Place your bets</div>
+        <div class="multiplier" id="multiplier">1.00<span>x</span></div>
+        <div class="phase-sub" id="phaseSub">Round starts in 5.0s</div>
+      </div>
+
+      <div class="toasts" id="toasts" aria-live="polite"></div>
+
+      <div class="stage-foot">
+        <span id="fairHash">hash: —</span>
+        <span id="roundNo">round #1</span>
+      </div>
+    </section>
+
+    <!-- ================= SIDE PANEL ================= -->
+    <aside class="side">
+      <div class="panel bet-panel">
+        <div class="panel-head">
+          <h2>Place your bet</h2>
+          <span class="badge" id="betState">Open</span>
+        </div>
+
+        <div class="balance-row">
+          <span>Balance</span>
+          <strong><span id="panelBalance">10,000</span> <em>coins</em></strong>
+        </div>
+
+        <div class="amount-field">
+          <button class="step" id="btnHalf" aria-label="Halve bet">½</button>
+          <div class="amount-input">
+            <input id="betInput" type="number" inputmode="numeric" min="10" step="10" value="100" aria-label="Bet amount">
+            <span>coins</span>
+          </div>
+          <button class="step" id="btnDouble" aria-label="Double bet">2×</button>
+        </div>
+
+        <div class="quick-chips" id="quickChips">
+          <button data-amount="100">100</button>
+          <button data-amount="500">500</button>
+          <button data-amount="1000">1K</button>
+          <button data-amount="5000">5K</button>
+        </div>
+
+        <label class="auto-row" for="autoCashout">
+          <span>Auto cash out at</span>
+          <span class="auto-input">
+            <input id="autoCashout" type="number" step="0.01" min="1.01" inputmode="decimal" placeholder="off">
+            <span>x</span>
+          </span>
+        </label>
+
+        <button class="action" id="actionBtn" data-mode="bet">
+          <span class="action-main" id="actionMain">BET</span>
+          <span class="action-sub" id="actionSub">100 coins</span>
+        </button>
+
+        <p class="hint" id="hint">Place your bet before the rocket takes off.</p>
+      </div>
+
+      <div class="panel lobby">
+        <div class="lobby-head">
+          <h2>Live bets</h2>
+          <span id="playersCount">0 players</span>
+        </div>
+        <div class="bet-row head" aria-hidden="true">
+          <span>Player</span><span>Bet</span><span>Cash out</span><span>Payout</span>
+        </div>
+        <div class="bet-table" id="liveBets"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <span>Demo game · virtual coins only · not real-money gambling</span>
+    <span class="footer-dot">•</span>
+    <span>Provably fair SHA-256</span>
+  </footer>
+</div>
+
+<!-- ================= MODALS ================= -->
+<div class="modal" id="modalMenu" hidden>
+  <div class="modal-card small">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+    <h2>Menu</h2>
+    <div class="menu-grid">
+      <button class="menu-item" data-open="modalHow"><b>How to play</b><span>Rules &amp; controls</span></button>
+      <button class="menu-item" data-open="modalFair"><b>Provably fair</b><span>Seeds &amp; verification</span></button>
+      <button class="menu-item" data-open="modalHistory"><b>Round history</b><span>Last 50 rounds</span></button>
+      <button class="menu-item" data-open="modalStats"><b>Statistics</b><span>Your session</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modalHow" hidden>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+    <h2>How to play</h2>
+    <ol class="steps">
+      <li><b>Place a bet</b> during the countdown. Your stake is taken from your demo balance.</li>
+      <li><b>The rocket takes off</b> and the multiplier climbs from <code>1.00x</code> upward.</li>
+      <li><b>Cash out</b> any time to lock in <code>stake × multiplier</code> coins.</li>
+      <li>If the rocket <b>flies away</b> before you cash out, the stake is lost.</li>
+    </ol>
+    <p class="fine">Tip: set an <b>auto cash out</b> multiplier (e.g. <code>2.00</code>) and the game will cash you out automatically. Use the ½ / 2× buttons for quick stake changes, and press <kbd>Space</kbd> to bet or cash out.</p>
+    <p class="fine">This is a <b>demo with virtual coins</b>. No money can be deposited or won.</p>
+  </div>
+</div>
+
+<div class="modal" id="modalFair" hidden>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+    <h2>Provably fair</h2>
+    <p class="fine">Each round's crash point is derived from a server seed, your client seed and a round nonce using <code>HMAC-SHA256</code>. The hash of the server seed is published before the round; the seed itself is revealed after it ends, so you can verify the result.</p>
+
+    <div class="fair-block">
+      <div class="fair-item">
+        <label for="clientSeedInput">Your client seed</label>
+        <div class="seed-row">
+          <input id="clientSeedInput" type="text" maxlength="64" spellcheck="false">
+          <button class="mini-btn" id="btnSaveSeed">Save</button>
+        </div>
+      </div>
+      <div class="fair-item">
+        <span>Next nonce</span>
+        <code id="fairNonce">1</code>
+      </div>
+      <div class="fair-item">
+        <span>Current server seed hash</span>
+        <code class="wrap" id="fairHashCurrent">—</code>
+      </div>
+    </div>
+
+    <h3>Last round</h3>
+    <div class="fair-block">
+      <div class="fair-item">
+        <span>Server seed</span>
+        <code class="wrap" id="fairLastSeed">—</code>
+      </div>
+      <div class="fair-item">
+        <span>Seed hash</span>
+        <code class="wrap" id="fairLastHash">—</code>
+      </div>
+      <div class="fair-item">
+        <span>Crash point</span>
+        <code id="fairLastCrash">—</code>
+      </div>
+      <div class="fair-item">
+        <span>Message</span>
+        <code class="wrap" id="fairLastMsg">—</code>
+      </div>
+    </div>
+
+    <div class="fair-actions">
+      <button class="mini-btn primary" id="btnVerify">Verify last round</button>
+      <span class="verify-out" id="verifyOut"></span>
+    </div>
+
+    <h3>Algorithm</h3>
+    <pre class="code">hash  = HMAC_SHA256(serverSeed, clientSeed + ":" + nonce)
+h     = int(hash[0..8], 16)          // first 4 bytes
+e     = 2^32
+crash = h % 33 == 0
+      ? 1.00
+      : floor((100·e − h) / (e − h)) / 100</pre>
+    <p class="fine">The result is capped at <code>1000x</code>. This demo runs fully in the browser, so the seeds are generated locally — it demonstrates the algorithm rather than enforcing it against a server.</p>
+  </div>
+</div>
+
+<div class="modal" id="modalHistory" hidden>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+    <h2>Round history</h2>
+    <div class="hist-list" id="histList"></div>
+  </div>
+</div>
+
+<div class="modal" id="modalStats" hidden>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+    <h2>Statistics</h2>
+    <div class="stats-grid">
+      <div class="stat"><span>Rounds played</span><b id="statRounds">0</b></div>
+      <div class="stat"><span>Rounds won</span><b id="statWon">0</b></div>
+      <div class="stat"><span>Total wagered</span><b id="statWagered">0</b></div>
+      <div class="stat"><span>Biggest win</span><b id="statBiggest">0</b></div>
+      <div class="stat"><span>Net profit</span><b id="statProfit">0</b></div>
+      <div class="stat"><span>Best multiplier</span><b id="statBestMult">—</b></div>
+    </div>
+    <div class="stats-actions">
+      <button class="mini-btn" id="btnReset">Reset demo progress</button>
+    </div>
+    <p class="fine">Progress is stored in your browser (localStorage). Resetting restores the starting balance of 10,000 coins.</p>
+  </div>
+</div>
+
+<script src="js/game.js"></script>
+</body>
+</html>
