@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" role="img" aria-label="Roulette game artwork">
+  <defs>
+    <linearGradient id="rbg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#40122a"/><stop offset="1" stop-color="#150816"/>
+    </linearGradient>
+    <radialGradient id="rglow"><stop stop-color="#f10033" stop-opacity=".4"/><stop offset="1" stop-color="#f10033" stop-opacity="0"/></radialGradient>
+    <linearGradient id="rrim" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fde047"/><stop offset="1" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="460" fill="url(#rbg)"/>
+  <circle cx="300" cy="225" r="230" fill="url(#rglow)"/>
+  <circle cx="300" cy="230" r="170" fill="none" stroke="url(#rrim)" stroke-width="16"/>
+  <circle cx="300" cy="230" r="140" fill="#0b1a2b"/>
+  <g stroke="#facc15" stroke-opacity=".55" stroke-width="2">
+    <path d="M300 90v140M300 370v-140M160 230h140M440 230h-140M201 131l99 99M399 131l-99 99M201 329l99-99M399 329l-99-99"/>
+  </g>
+  <g>
+    <path d="M300 230 300 90 A140 140 0 0 1 399 131Z" fill="#f10033" opacity=".85"/>
+    <path d="M300 230 399 329 A140 140 0 0 1 300 370Z" fill="#111827" opacity=".9"/>
+    <path d="M300 230 201 329 A140 140 0 0 1 201 131Z" fill="#f10033" opacity=".85"/>
+    <circle cx="300" cy="230" r="46" fill="#0a1829" stroke="#facc15" stroke-width="3"/>
+  </g>
+  <circle cx="362" cy="160" r="9" fill="#fff7d6"/>
+  <g fill="#facc15">
+    <circle cx="300" cy="230" r="5"/><circle cx="300" cy="120" r="4"/><circle cx="408" cy="286" r="4"/>
+  </g>
+  <g fill="#a4d1ff" opacity=".5">
+    <circle cx="70" cy="390" r="2.5"/><circle cx="530" cy="80" r="2"/><circle cx="60" cy="90" r="2"/>
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1829">
+<meta name="description" content="SkyRocket privacy notice — demo data stays in your browser, with no server accounts or analytics.">
+<title>Privacy — SkyRocket Casino (Demo)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1829'/%3E%3Cpath d='M23 9 9 15l6 2 2 6z' fill='%23facc15'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/lobby.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div class="app">
+  <div id="siteHeader"></div>
+
+  <main class="page-shell">
+    <div class="page-head">
+      <div class="breadcrumb"><a href="index.html">Casino</a><span>/</span><span>Privacy</span></div>
+      <span class="page-chip">Privacy notice</span>
+      <h1>Your data stays in your browser</h1>
+      <p>SkyRocket has no backend account system, analytics or payment integration. This notice explains the small amount of data the demo stores locally.</p>
+    </div>
+
+    <article class="doc">
+      <p class="updated">Last updated: 3 November 2026</p>
+
+      <div class="callout">
+        <b>Short version:</b> demo progress is saved in <code>localStorage</code> on your device. Nothing is sent to a SkyRocket server because there is no SkyRocket server. Clearing browser data removes the demo.
+      </div>
+
+      <h2>1. What is stored</h2>
+      <p>The site may store the following entries in your browser's local storage:</p>
+      <ul>
+        <li><code>skyr_state_v1</code> — demo balance, game statistics and recent wallet transactions.</li>
+        <li><code>skyr_favs</code> — your favourite game names.</li>
+        <li><code>skyr_claims</code> — timestamps for bonus claims and cooldowns.</li>
+        <li><code>skyr_prefs_v1</code> — local display preferences, such as reduced motion.</li>
+        <li><code>skyr_users_v1</code> and <code>skyr_session_v1</code> — optional local demo profile and current session email.</li>
+        <li><code>skyr_support_tickets_v1</code> — support notes you choose to save through the demo form.</li>
+        <li><code>skyr_game_hist</code> and other demo game keys — local game state or history used by individual games.</li>
+      </ul>
+      <p>This data remains on your device and is readable by scripts running on this site's origin. It is not transmitted to us.</p>
+
+      <h2>2. What is not collected</h2>
+      <ul>
+        <li>No server-side account, KYC, identity verification or payment data.</li>
+        <li>No analytics, tracking pixels, advertising identifiers or behavioural profiling by SkyRocket.</li>
+        <li>No real card, UPI, bank, wallet or crypto details should ever be entered. The demo fields are placeholders.</li>
+      </ul>
+
+      <h2>3. Third-party requests</h2>
+      <p>The pages load the Poppins font from Google Fonts. When your browser requests that font, Google may receive standard request information such as your IP address, browser user agent and the referring page, subject to Google's own privacy policy. The demo does not use other third-party scripts, CDNs or analytics libraries.</p>
+      <p>If you click a link to GitHub or another external site, that site's privacy policy applies. SkyRocket does not control those sites.</p>
+
+      <h2>4. Cookies</h2>
+      <p>SkyRocket does not set its own cookies. The demo uses <code>localStorage</code>, which is similar in some ways but is not sent with every HTTP request. Google Fonts may use its own cookies or similar technologies under its policies.</p>
+
+      <h2>5. How long data is kept</h2>
+      <p>Local data remains until you remove it. You can clear it using your browser's site-data controls or the reset button on the <a href="account.html">account page</a>. Reset removes demo balance, transactions, favourites, bonus claims and game data, but keeps your local demo profile.</p>
+
+      <h2>6. Security</h2>
+      <p>Local storage is not encrypted by the demo. Demo passwords are hashed locally with SHA-256 for demonstration, but a local browser profile is not a secure authentication system. Never use a real password, and avoid using the demo on a shared or public device if you care about local progress.</p>
+
+      <h2>7. Children and age</h2>
+      <p>The demo is intended for adults aged 18 or older because it simulates casino gambling. It is not directed at children. Do not create a profile if you are under 18.</p>
+
+      <h2>8. Your choices</h2>
+      <ul>
+        <li>Use the site as a guest without creating a profile.</li>
+        <li>Reset demo progress from the account page.</li>
+        <li>Clear all local data through your browser settings.</li>
+        <li>Block or replace Google Fonts with your browser's settings or an extension; the site still works with fallback fonts.</li>
+      </ul>
+
+      <h2>9. Changes</h2>
+      <p>This notice may be updated as the demo changes. The date at the top shows the latest version.</p>
+
+      <h2>10. Contact</h2>
+      <p>For privacy questions about this demo, use the <a href="support.html">support page</a> or open an issue on the <a href="https://github.com/Flakervip143/aviator/issues" target="_blank" rel="noopener">GitHub repository</a>.</p>
+    </article>
+
+    <div class="section-links">
+      <a href="terms.html">Terms</a>
+      <a href="responsible.html">Responsible play</a>
+      <a href="support.html">Support</a>
+    </div>
+  </main>
+
+  <div id="siteFooter"></div>
+  <div id="siteModals"></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

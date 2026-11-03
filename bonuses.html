@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1829">
+<meta name="description" content="Claim free SkyRocket demo coins — welcome, daily and weekly virtual-coin bonuses. No purchase, no real money.">
+<title>Bonuses — SkyRocket Casino (Demo)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1829'/%3E%3Cpath d='M23 9 9 15l6 2 2 6z' fill='%23facc15'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/lobby.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div class="app">
+  <div id="siteHeader"></div>
+
+  <main class="page-shell">
+    <section class="bonus-hero">
+      <span class="page-chip">Free virtual coins</span>
+      <h1>More coins. <em>Zero real money.</em></h1>
+      <p>Claim demo bonuses to keep exploring the casino. All coins are virtual, free and have no cash value. No deposit, purchase or KYC is ever required.</p>
+      <div class="section-links">
+        <a href="index.html">Browse games</a>
+        <a href="cashier.html">Demo cashier</a>
+        <a href="account.html">My account</a>
+      </div>
+    </section>
+
+    <div class="demo-banner">
+      <span>🪙</span>
+      <div><b>Current demo balance:</b> <strong id="bonusBalance">10,000</strong> coins. Bonuses are simulated and stored in this browser only.</div>
+    </div>
+
+    <div class="bonus-grid" id="bonusGrid"></div>
+
+    <div class="section-links" style="margin-top:18px">
+      <a href="terms.html">Bonus terms</a>
+      <a href="responsible.html">Responsible play</a>
+      <a href="support.html">Need help?</a>
+    </div>
+
+    <section class="panel play-info">
+      <div class="history-head">How demo bonuses work</div>
+      <p class="fine" style="margin:0;font-size:11.5px;line-height:1.75;color:var(--muted)">
+        There is no wagering requirement because there is nothing to withdraw. Bonus timers use this device's clock and are stored in
+        <code>localStorage</code>. Clearing browser data or using a different browser starts a fresh demo. You can also reset progress from
+        <a href="account.html">your account</a>.
+      </p>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+  <div id="siteModals"></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/site.js"></script>
+<script src="js/bonuses.js"></script>
+</body>
+</html>

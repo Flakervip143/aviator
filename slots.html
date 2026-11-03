@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1829">
+<meta name="description" content="Slot games at SkyRocket Casino — playable demo games with free virtual coins. No real money.">
+<title>Slot games — SkyRocket Casino (Demo)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1829'/%3E%3Cpath d='M23 9 9 15l6 2 2 6z' fill='%23facc15'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/lobby.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-cat="slots" data-search-local="true">
+<div class="app">
+  <div id="siteHeader"></div>
+
+  <main class="page-shell">
+    <div class="page-head">
+      <div class="breadcrumb"><a href="index.html">Casino</a><span>/</span> Slots</div>
+      <span class="page-chip">🎰 12 games</span>
+      <h1>Slot games</h1>
+      <p>Spin three-reel demo slots with instant results and virtual-coin payouts.</p>
+    </div>
+
+    <div class="page-tools">
+      <div class="chips" id="catChips">
+        <a class="chip" href="index.html">All games</a>
+        <a class="chip" href="crash.html">Crash</a>
+        <a class="chip active" href="slots.html">Slots</a>
+        <a class="chip" href="live.html">Live casino</a>
+        <a class="chip" href="table.html">Table</a>
+        <a class="chip" href="indian.html">Indian</a>
+        <button class="chip" id="favChip" type="button">★ Favourites</button>
+      </div>
+    </div>
+
+    <div class="game-grid" id="catGrid"></div>
+
+    <div class="empty-state" id="catEmpty" hidden>
+      <span>🔍</span>
+      <h3>No games found</h3>
+      <p>Try a different search or clear the favourites filter.</p>
+    </div>
+
+    <p class="fine" id="catCount"></p>
+
+    <section class="panel play-info">
+      <div class="history-head">Demo games</div>
+      <p class="fine" style="margin:0;font-size:11px;line-height:1.7;color:var(--muted)">
+        Every tile on this page opens a playable demo round. All balances are virtual coins with no monetary value.
+        New to SkyRocket? Read <a href="support.html">how it works</a> or grab coins in the <a href="cashier.html">cashier</a>.
+      </p>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+  <div id="siteModals"></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/site.js"></script>
+<script src="js/category.js"></script>
+</body>
+</html>

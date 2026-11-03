@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" role="img" aria-label="Live casino artwork">
+  <defs>
+    <linearGradient id="lbg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#3b1550"/><stop offset="1" stop-color="#120a22"/>
+    </linearGradient>
+    <radialGradient id="lglow"><stop stop-color="#7c5cff" stop-opacity=".5"/><stop offset="1" stop-color="#7c5cff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="lgold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fde047"/><stop offset="1" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="460" fill="url(#lbg)"/>
+  <circle cx="300" cy="210" r="230" fill="url(#lglow)"/>
+  <g transform="translate(300 225)">
+    <circle r="150" fill="none" stroke="url(#lgold)" stroke-width="4" stroke-opacity=".65"/>
+    <circle r="120" fill="none" stroke="#a4d1ff" stroke-opacity=".18"/>
+    <circle r="78" fill="#0b1a2b" stroke="#facc15" stroke-opacity=".5" stroke-width="2"/>
+    <text x="0" y="14" font-family="Arial, sans-serif" font-size="42" font-weight="800" fill="#facc15" text-anchor="middle">LIVE</text>
+    <g fill="#facc15">
+      <circle cx="0" cy="-120" r="7"/><circle cx="104" cy="60" r="7"/><circle cx="-104" cy="60" r="7"/>
+    </g>
+    <g fill="#a4d1ff" opacity=".55">
+      <circle cx="0" cy="120" r="4"/><circle cx="85" cy="-85" r="4"/><circle cx="-85" cy="-85" r="4"/>
+    </g>
+  </g>
+  <g fill="#facc15" opacity=".7">
+    <circle cx="75" cy="390" r="2.5"/><circle cx="525" cy="80" r="2"/><circle cx="535" cy="390" r="2"/>
+  </g>
+</svg>

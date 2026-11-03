@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" role="img" aria-label="Slots game artwork">
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#4a2410"/><stop offset="1" stop-color="#190d09"/>
+    </linearGradient>
+    <linearGradient id="sreel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fff7d6"/><stop offset="1" stop-color="#f5d182"/>
+    </linearGradient>
+    <linearGradient id="sseven" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fde047"/><stop offset="1" stop-color="#dc2626"/>
+    </linearGradient>
+    <radialGradient id="sglow"><stop stop-color="#facc15" stop-opacity=".55"/><stop offset="1" stop-color="#facc15" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="600" height="460" fill="url(#sbg)"/>
+  <circle cx="300" cy="200" r="220" fill="url(#sglow)"/>
+  <g transform="translate(88 92)">
+    <rect x="0" y="0" width="424" height="270" rx="30" fill="#2a140d" stroke="#facc15" stroke-opacity=".45" stroke-width="3"/>
+    <g>
+      <rect x="30" y="34" width="104" height="202" rx="16" fill="url(#sreel)"/>
+      <rect x="160" y="34" width="104" height="202" rx="16" fill="url(#sreel)"/>
+      <rect x="290" y="34" width="104" height="202" rx="16" fill="url(#sreel)"/>
+    </g>
+    <g font-family="Arial, sans-serif" font-weight="800" text-anchor="middle">
+      <text x="82" y="168" font-size="112" fill="url(#sseven)">7</text>
+      <text x="212" y="160" font-size="96" fill="#dc2626">7</text>
+      <text x="342" y="168" font-size="112" fill="url(#sseven)">7</text>
+    </g>
+    <g fill="#facc15" opacity=".85">
+      <circle cx="82" cy="60" r="4"/><circle cx="212" cy="60" r="4"/><circle cx="342" cy="60" r="4"/>
+    </g>
+  </g>
+  <g fill="#fff7d6" opacity=".8">
+    <circle cx="70" cy="400" r="3"/><circle cx="525" cy="90" r="2.5"/><circle cx="540" cy="400" r="2"/><circle cx="60" cy="80" r="2"/>
+  </g>
+</svg>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1829">
+<meta name="description" content="SkyRocket demo support — FAQs, help links and a local contact form. This is a demo casino, not a real-money operator.">
+<title>Support — SkyRocket Casino (Demo)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1829'/%3E%3Cpath d='M23 9 9 15l6 2 2 6z' fill='%23facc15'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/lobby.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div class="app">
+  <div id="siteHeader"></div>
+
+  <main class="page-shell">
+    <div class="page-head">
+      <div class="breadcrumb"><a href="index.html">Casino</a><span>/</span><span>Support</span></div>
+      <span class="page-chip">Demo help centre</span>
+      <h1>How can we help?</h1>
+      <p>SkyRocket is a free browser demo, not a real-money casino. Find quick answers below or leave a note that is saved locally.</p>
+    </div>
+
+    <div class="info-cards">
+      <article class="info-card">
+        <span class="info-icon">🪙</span>
+        <h3>Need demo coins?</h3>
+        <p>Claim a welcome, daily or weekly bonus, or use the simulated cashier.</p>
+        <a href="bonuses.html">Open bonuses ›</a>
+      </article>
+      <article class="info-card">
+        <span class="info-icon">👤</span>
+        <h3>Manage your profile</h3>
+        <p>Change your display name, review activity or reset local demo progress.</p>
+        <a href="account.html">Open account ›</a>
+      </article>
+      <article class="info-card">
+        <span class="info-icon">🛡</span>
+        <h3>Check fairness</h3>
+        <p>Aviator reveals its server seed after each round so you can verify the crash point.</p>
+        <a href="aviator.html#fair">Open Aviator ›</a>
+      </article>
+    </div>
+
+    <section class="panel account-section" style="margin-top:18px">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details open>
+          <summary>Is this real-money gambling?</summary>
+          <p>No. SkyRocket is a demo built for entertainment. All balances are virtual coins with no monetary value. There are no deposits, withdrawals, cash prizes or real-money wagers.</p>
+        </details>
+        <details>
+          <summary>Where is my balance stored?</summary>
+          <p>In this browser's <code>localStorage</code> on your device. There is no server account, so clearing browser data or switching devices starts a fresh demo. Logging in only creates a local profile in the same browser.</p>
+        </details>
+        <details>
+          <summary>How do I get more coins?</summary>
+          <p>Open the <a href="bonuses.html">bonuses page</a> for free top-ups, or use the <a href="cashier.html">demo cashier</a>. Cashier deposits are simulated and never contact a payment provider.</p>
+        </details>
+        <details>
+          <summary>Can I withdraw coins or real money?</summary>
+          <p>No. The cashier's withdrawal option only removes virtual coins to demonstrate the flow. Nothing is sent to a bank, UPI ID, card or crypto wallet.</p>
+        </details>
+        <details>
+          <summary>How does the Aviator fairness check work?</summary>
+          <p>The crash point is derived from HMAC-SHA256 using a server seed, client seed and nonce. The server seed hash is shown before the round and the full seed is revealed afterwards. Open <a href="aviator.html#fair">Aviator</a> and use the provably fair panel to recompute the last round.</p>
+        </details>
+        <details>
+          <summary>Why did my demo progress disappear?</summary>
+          <p>Progress is local to one browser and can be cleared by private browsing, storage cleanup or the reset button on your account page. It is not synced to a server.</p>
+        </details>
+        <details>
+          <summary>Is this affiliated with Crorebet, Spribe or Aviator?</summary>
+          <p>No. SkyRocket is an original demo interface and is not affiliated with any operator or game provider. Third-party names may appear for reference only.</p>
+        </details>
+        <details>
+          <summary>I found a bug. Where can I report it?</summary>
+          <p>Use the local form below for notes you want to keep in this browser, or open an issue on the <a href="https://github.com/Flakervip143/aviator/issues" target="_blank" rel="noopener">GitHub repository</a>.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="panel account-section">
+      <h2>Leave a demo support note</h2>
+      <p class="fine" style="margin:0 0 14px;font-size:11.5px;line-height:1.7;color:var(--muted)">
+        This form does not send anything to a server or a real support team. It only saves your note in this browser so you can test the flow.
+      </p>
+
+      <div class="auth-error" id="supportError" role="alert" hidden></div>
+      <div class="form-success" id="supportSuccess" hidden></div>
+
+      <form class="contact-form" id="supportForm" novalidate>
+        <div class="field">
+          <label for="supportName">Your name</label>
+          <input id="supportName" name="name" type="text" autocomplete="name" placeholder="Demo Player" maxlength="60" required>
+        </div>
+        <div class="field">
+          <label for="supportEmail">Email</label>
+          <input id="supportEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" maxlength="120" required>
+        </div>
+        <div class="field">
+          <label for="supportTopic">Topic</label>
+          <select id="supportTopic" name="topic" required>
+            <option value="">Choose a topic</option>
+            <option>Balance or coins</option>
+            <option>Game rules</option>
+            <option>Provably fair</option>
+            <option>Account or local storage</option>
+            <option>Bug report</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="supportMessage">Message</label>
+          <textarea id="supportMessage" name="message" placeholder="Describe your question or issue…" maxlength="1200" required></textarea>
+        </div>
+        <button class="btn gold" type="submit" style="justify-self:start">Save demo note</button>
+        <p class="form-note">Never include real card numbers, UPI PINs, passwords or personal financial details.</p>
+      </form>
+    </section>
+
+    <div class="section-links">
+      <a href="terms.html">Demo terms</a>
+      <a href="privacy.html">Privacy notice</a>
+      <a href="responsible.html">Responsible play</a>
+      <a href="index.html">Back to casino</a>
+    </div>
+  </main>
+
+  <div id="siteFooter"></div>
+  <div id="siteModals"></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/site.js"></script>
+<script src="js/support.js"></script>
+</body>
+</html>

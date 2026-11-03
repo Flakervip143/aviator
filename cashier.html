@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1829">
+<meta name="description" content="SkyRocket demo cashier — add virtual coins with a simulated UPI, card, net banking, wallet or crypto checkout. No real payments.">
+<title>Cashier — SkyRocket Casino (Demo)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1829'/%3E%3Cpath d='M23 9 9 15l6 2 2 6z' fill='%23facc15'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/lobby.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div class="app">
+  <div id="siteHeader"></div>
+
+  <main class="page-shell">
+    <div class="page-head">
+      <div class="breadcrumb"><a href="index.html">Casino</a><span>/</span> Cashier</div>
+      <span class="page-chip">Demo wallet</span>
+      <h1>Cashier</h1>
+      <p>Add virtual coins with a simulated checkout. Every method is a demo — no payment is processed, no card is charged and no real money is involved.</p>
+    </div>
+
+    <div class="demo-banner">
+      <span>⚠️</span>
+      <div><b>Demo checkout only.</b> This cashier never contacts a payment provider. Use test details only — never enter a real card number, UPI PIN, CVV or bank password.</div>
+    </div>
+
+    <div class="cashier-grid">
+      <section class="panel cashier-panel">
+        <div class="cashier-tabs" role="tablist">
+          <button class="cashier-tab active" data-tab="deposit" role="tab" aria-selected="true">Deposit</button>
+          <button class="cashier-tab" data-tab="withdraw" role="tab" aria-selected="false">Withdraw</button>
+        </div>
+
+        <!-- ================= DEPOSIT ================= -->
+        <div id="depositPane">
+          <div class="cashier-step">
+            <h3>1 · Choose amount</h3>
+            <div class="amount-grid" id="depositAmounts"></div>
+            <div class="cashier-amount-input">
+              <input id="depositAmount" type="number" min="100" max="100000" step="100" value="1000" inputmode="numeric" aria-label="Deposit amount in demo coins">
+              <span>demo coins</span>
+            </div>
+          </div>
+
+          <div class="cashier-step">
+            <h3>2 · Payment method</h3>
+            <div class="method-grid" id="depositMethods"></div>
+            <div class="checkout-fields" id="depositFields"></div>
+          </div>
+
+          <div class="cashier-summary" id="depositSummary"></div>
+
+          <button class="action-btn pay-btn" id="btnDeposit">Add demo coins</button>
+          <div class="cashier-result" id="depositResult" hidden></div>
+        </div>
+
+        <!-- ================= WITHDRAW ================= -->
+        <div id="withdrawPane" hidden>
+          <div class="cashier-step">
+            <h3>1 · Choose amount</h3>
+            <div class="amount-grid" id="withdrawAmounts"></div>
+            <div class="cashier-amount-input">
+              <input id="withdrawAmount" type="number" min="500" step="100" value="1000" inputmode="numeric" aria-label="Withdraw amount in demo coins">
+              <span>demo coins</span>
+            </div>
+          </div>
+
+          <div class="cashier-step">
+            <h3>2 · Payout method</h3>
+            <div class="method-grid" id="withdrawMethods"></div>
+            <div class="checkout-fields" id="withdrawFields"></div>
+          </div>
+
+          <div class="cashier-summary" id="withdrawSummary"></div>
+
+          <button class="action-btn pay-btn" id="btnWithdraw" data-mode="cashout">Simulate withdrawal</button>
+          <div class="cashier-result" id="withdrawResult" hidden></div>
+        </div>
+      </section>
+
+      <aside>
+        <section class="panel cashier-side">
+          <h3>Demo wallet</h3>
+          <div class="wallet-box">
+            <span>Available balance</span>
+            <strong data-balance>10,000</strong>
+            <small>virtual coins · no cash value</small>
+          </div>
+
+          <div class="method-list">
+            <div><i>📱</i> UPI <b>Demo</b></div>
+            <div><i>💳</i> Cards <b>Demo</b></div>
+            <div><i>🏦</i> Net banking <b>Demo</b></div>
+            <div><i>👛</i> Wallets <b>Demo</b></div>
+            <div><i>₿</i> Crypto <b>Demo</b></div>
+          </div>
+
+          <p class="cashier-note">
+            <b>No real payments.</b> Deposits credit virtual coins instantly. Withdrawals are simulated and remove virtual coins only — nothing is ever paid out.
+            Read the <a href="terms.html">demo terms</a>.
+          </p>
+        </section>
+
+        <section class="panel cashier-side cashier-history">
+          <h3>Recent wallet activity</h3>
+          <div class="tx-list" id="walletTx"></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <div id="siteFooter"></div>
+  <div id="siteModals"></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/site.js"></script>
+<script src="js/cashier.js"></script>
+</body>
+</html>
